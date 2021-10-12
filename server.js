@@ -1,5 +1,6 @@
 // express 모듈 불러오기
 const express = require("express");
+const bodyParser = require("body-parser");
 
 // express 객체 생성
 const app = express();
@@ -17,9 +18,18 @@ let db = fs.readFileSync("db.json", "utf-8");
 //     res.json({ greeting: 'Hello World' });
 // });
 
+app.use(bodyParser.json());
+
 app.get("/users", function (req, res) {
   const DB = JSON.parse(db).users;
   res.json(DB);
+});
+
+app.post("/user/login", function (req, res) {
+  const login = req.body;
+  const DB = JSON.parse(db).users;
+  console.log(login, "  login");
+  res.json(login);
 });
 
 console.log(`server running at http ${port}`);

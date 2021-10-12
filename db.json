@@ -16,6 +16,40 @@
         }
       ],
       "status": "activated"
+    },
+    {
+      "userName": "user2",
+      "firstName": "제경",
+      "lastName": "이",
+      "email": "jklee@gmail.com",
+      "password": "cccddd",
+      "wallets": [
+        {
+          "id": "596439d7bcf86cd799430443",
+          "nickname": "My Ether Wallet",
+          "cryptoType": "eth",
+          "accountIds": ["5349b4ddd2781d08c09890f3"],
+          "status": "activated"
+        }
+      ],
+      "status": "activated"
+    },
+    {
+      "userName": "user3",
+      "firstName": "지원",
+      "lastName": "박",
+      "email": "jwpark@gmail.com",
+      "password": "eeefff",
+      "wallets": [
+        {
+          "id": "596439d7bcf86cd799430443",
+          "nickname": "My Ether Wallet",
+          "cryptoType": "eth",
+          "accountIds": ["5349b4ddd2781d08c09890f3"],
+          "status": "activated"
+        }
+      ],
+      "status": "activated"
     }
   ],
   "wallets": [
