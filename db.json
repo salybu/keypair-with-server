@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "userName": "user1",
+      "firstName": "민수",
+      "lastName": "김",
+      "email": "mskim@gmail.com",
+      "password": "aaabbb",
+      "wallets": [
+        {
+          "id": "596439d7bcf86cd799430443",
+          "nickname": "My Ether Wallet",
+          "cryptoType": "eth",
+          "accountIds": ["5349b4ddd2781d08c09890f3"],
+          "status": "activated"
+        }
+      ],
+      "status": "activated"
+    }
+  ],
+  "wallets": [
+    {
+      "id": "596439d7bcf86cd799430443",
+      "nickname": "My Ether Wallet",
+      "address": "0x2904790cdb329BBB292d1b79F6528A79EBD067eE",
+      "balance": {
+        "crypto": {
+          "unit": "eth",
+          "amount": 97.13457789013324
+        },
+        "fiat": {
+          "unit": "krw",
+          "amount": 147932141
+        }
+      },
+      "transactions": [
+        {
+          "date": 1633583231,
+          "txId": "0xfc66e7b8b19c01176a7f8de3c02285b28dbdd969319280750250e5012e33c374",
+          "value": {
+            "crypto": {
+              "unit": "eth",
+              "amount": 97.13457789013324
+            },
+            "fiat": {
+              "unit": "krw",
+              "amount": 147932141
+            }
+          },
+          "direction": "in",
+          "from": "0x82b7a994365A7000B79540704b75E76C2FC5F7d9",
+          "to": "0x2904790cdb329BBB292d1b79F6528A79EBD067eE",
+          "status": "confirmed"
+        }
+      ],
+      "status": "activated"
+    }
+  ]
+}
