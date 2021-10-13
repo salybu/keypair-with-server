@@ -1,13 +1,9 @@
 import { Container, Box, Button, Typography, TextField, FormControlLabel, Checkbox, Stack } from '@mui/material';
-import userApi from 'apis/userApi';
 import Logo from 'assets/cilo-logo-light.png';
-import { useEffect } from 'react';
+import { useLogin } from 'components/login';
 
 const Login = (): JSX.Element => {
-  useEffect(() => {
-    userApi.login();
-    console.log('userApi login');
-  }, []);
+  const { values, handleChange, handleLogin } = useLogin();
 
   return (
     <Container fixed sx={{ display: 'flex', justifyContent: 'center', height: '100vh' }}>
@@ -40,8 +36,8 @@ const Login = (): JSX.Element => {
         <Typography component='h2' sx={{ fontWeight: 'normal', fontSize: 14, lineHeight: '21px', marginBottom: '20px' }}>
           아이디와 비밀번호를 입력해 주세요.
         </Typography>
-        <TextField label='아이디' variant='standard' sx={{ width: '100%', marginBottom: '10px' }} />
-        <TextField label='비밀번호' variant='standard' sx={{ width: '100%' }} />
+        <TextField label='아이디' variant='standard' sx={{ width: '100%', marginBottom: '10px' }} onChange={handleChange('userName')} value={values.userName} />
+        <TextField label='비밀번호' variant='standard' sx={{ width: '100%' }} onChange={handleChange('password')} value={values.password} type='password' />
         <FormControlLabel
           control={<Checkbox />}
           label='비밀번호 기억하기'
@@ -51,6 +47,7 @@ const Login = (): JSX.Element => {
           variant='contained'
           disableElevation
           sx={{ width: '100%', backgroundColor: '#00D67E', borderRadius: '4px', letterSpacing: '0.3px', '& :hover': { backgroundColor: '#00d67e' } }}
+          onClick={handleLogin}
         >
           로그인
         </Button>
