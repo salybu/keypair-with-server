@@ -1,5 +1,6 @@
 import { Action, createActions, handleActions } from 'redux-actions';
-import { call, put, takeEvery } from '@redux-saga/core/effects';
+import { call, getContext, put, takeEvery } from '@redux-saga/core/effects';
+import { History } from 'history';
 import { ILogin, ILoginOutput, ITokenState, IUserToken, RootState } from 'types';
 import { userApi } from 'apis';
 
@@ -48,6 +49,8 @@ function* loginSaga(action: Action<ILogin>) {
     const res: ILoginOutput = yield call(userApi.login, action.payload);
     const params = { token: res.accessToken, userName: action.payload.userName };
     yield put(success(params));
+    const history: History = yield getContext('history');
+    history.push('/wallet');
   } catch (error: any) {
     // yield put(fail(new Error(error.response.data.error || 'UNKNOWN_ERROR')));
   }
