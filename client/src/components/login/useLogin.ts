@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import userApi from 'apis/userApi';
+import { useDispatch } from 'react-redux';
+import { login as loginSagaStart } from 'modules/token';
 import { ILogin } from 'types';
 
 const initialLogin: ILogin = {
@@ -9,14 +10,14 @@ const initialLogin: ILogin = {
 
 const useLogin = () => {
   const [values, setValues] = useState<ILogin>(initialLogin);
+  const dispatch = useDispatch();
 
   const handleChange = (prop: keyof ILogin) => (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [prop]: e.target.value });
   };
 
   const handleLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
-    userApi.login(values);
-    console.log('userApi login');
+    dispatch(loginSagaStart(values));
   };
 
   return { values, handleChange, handleLogin };
