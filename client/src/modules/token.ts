@@ -3,6 +3,8 @@ import { call, getContext, put, takeEvery } from '@redux-saga/core/effects';
 import { History } from 'history';
 import { ILogin, ILoginOutput, ITokenState, IUserToken, RootState } from 'types';
 import { userApi } from 'apis';
+import Storage from 'utils/Storage';
+import { TOKEN, USERNAME } from 'utils/constants';
 
 const initialState: ITokenState = {
   token: null,
@@ -49,6 +51,8 @@ function* loginSaga(action: Action<ILogin>) {
     const res: ILoginOutput = yield call(userApi.login, action.payload);
     const params = { token: res.accessToken, userName: action.payload.userName };
     yield put(success(params));
+    Storage.set(TOKEN, res.accessToken);
+    Storage.set(USERNAME, action.payload.userName);
     const history: History = yield getContext('history');
     history.push('/wallet');
   } catch (error: any) {
