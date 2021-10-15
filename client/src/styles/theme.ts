@@ -1,30 +1,32 @@
 import { createTheme } from '@mui/material';
-import NunitoTTF from 'assets/Nunito-Light.ttf';
-import RobotoTTF from 'assets/Roboto-Medium.ttf';
-import MontserratTTF from 'assets/Montserrat-Medium.ttf';
+
+const TYPOGRAPHY = {
+  h2: {
+    fontFamily: 'Roboto',
+    fontWeight: 500,
+    fontSize: 18,
+  },
+};
+
+const PALETTE = {
+  common: {
+    white: '#FFF',
+  },
+  primary: {
+    main: '#00D67E',
+  },
+  grey: {
+    100: '#E5E5E5',
+    500: '#676767',
+  },
+};
 
 const theme = createTheme({
-  typography: {
-    fontFamily: 'Nunito',
-  },
+  typography: { ...TYPOGRAPHY },
+  palette: { ...PALETTE },
   components: {
     MuiCssBaseline: {
       styleOverrides: `
-            @font-face {
-                font-family: 'Nunito';
-                font-style: normal;
-                src: url(${NunitoTTF}) format('ttf');
-            }
-            @font-face {
-              font-family: 'Roboto';
-              font-style: normal;
-              src: url(${RobotoTTF}) format('ttf');
-            }
-            @font-face {
-              font-family: 'Montserrat';
-              font-style: normal;
-              src: url(${MontserratTTF}) format('ttf');
-            }
             *, *:before, *:after {
                 box-sizing: border-box;
             }
