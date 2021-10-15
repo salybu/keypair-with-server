@@ -13,4 +13,10 @@ module.exports = function (app) {
       changeOrigin: true,
     }),
   );
+  app.use(
+    createProxyMiddleware('/wallet/*/accounts/*', {
+      target: 'http://localhost:5000',
+      changeOrigin: true,
+    }),
+  );
 };

@@ -81,4 +81,29 @@ app.get("/user/:userName", function (req, res) {
   }
 });
 
+app.get("/wallet/:walletId/accounts/:accountId", function (req, res) {
+  try {
+    const walletId = req.params.walletId;
+    const accountId = req.params.accountId;
+    const DB = JSON.parse(db).wallets;
+
+    let selectedAccount = null;
+    DB.forEach((account) => {
+      if (account.id == accountId) {
+        selectedAccount = account;
+        return false;
+      }
+    });
+
+    // null 일 때 확인
+    if (!selectedAccount) {
+      res.status(404).send({
+        message: "Account not found",
+      });
+    } else {
+      res.status(200).send(selectedAccount);
+    }
+  } catch (e) {}
+});
+
 console.log(`server running at http ${port}`);
