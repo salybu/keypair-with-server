@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  src: url('./assets/Nunito-Light.eot'); /* IE9 Compat Modes */
+  src: local(''), url('./assets/Nunito-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./assets/Nunito-Light.woff') format('woff'),
+    /* Modern Browsers */ url('./assets/Nunito-Light.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('./assets/Nunito-Light.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('./assets/Nunito-Light.svg#Nunito-Light') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  src: url('./assets/Roboto-Medium.eot');
+  src: local(''), url('./assets/Roboto-Medium.eot?#iefix') format('embedded-opentype') url('./assets/Roboto-Medium.woff') format('woff'),
+    url('./assets/Roboto-Medium.woff2') format('woff2'), url('./assets/Roboto-Medium.ttf') format('truetype'),
+    url('./assets/Roboto-Medium.svg#Roboto-Medium') format('svg');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  src: url('./assets/Montserrat-Medium.eot');
+  src: local(''), url('./assets/Montserrat-Medium.eot?#iefix') format('embedded-opentype') url('./assets/Montserrat-Medium.woff') format('woff'),
+    url('./assets/Montserrat-Medium.woff2') format('woff2'), url('./assets/Montserrat-Medium.ttf') format('truetype'),
+    url('./assets/Montserrat-Medium.svg#Montserrat-Medium') format('svg');
+}

@@ -6,6 +6,7 @@ import createSagaMiddleware from 'redux-saga';
 import { createBrowserHistory } from 'history';
 import rootReducer, { rootSaga } from 'modules';
 import { CssBaseline, ThemeProvider } from '@mui/material';
+import './index.css';
 import theme from 'styles/theme';
 import App from './App';
 import Storage from 'utils/Storage';
